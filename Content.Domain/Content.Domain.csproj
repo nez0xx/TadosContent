@@ -8,4 +8,8 @@
     <ProjectReference Include="..\Domain.Abstractions\Domain.Abstractions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
