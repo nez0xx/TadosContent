@@ -10,7 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Commands.Abstractions\Commands.Abstractions.csproj" />
+    <ProjectReference Include="..\Content.Domain\Content.Domain.csproj" />
+    <ProjectReference Include="..\Domain.Abstractions\Domain.Abstractions.csproj" />
+    <ProjectReference Include="..\NHibernate.Infrastructure.AutoMapping\NHibernate.Infrastructure.AutoMapping.csproj" />
   </ItemGroup>
 
 </Project>

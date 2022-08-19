@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Commands.Abstractions\Commands.Abstractions.csproj" />
+    <ProjectReference Include="..\Content.Domain\Content.Domain.csproj" />
+    <ProjectReference Include="..\Domain.Abstractions\Domain.Abstractions.csproj" />
+    <ProjectReference Include="..\Linq.AsyncQueryable.Abstractions\Linq.AsyncQueryable.Abstractions.csproj" />
+    <ProjectReference Include="..\Linq.Providers.Abstractions\Linq.Providers.Abstractions.csproj" />
+    <ProjectReference Include="..\Queries.Abstractions\Queries.Abstractions.csproj" />
+    <ProjectReference Include="..\Repositories.Abstractions\Repositories.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

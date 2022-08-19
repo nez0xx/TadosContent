@@ -9,8 +9,4 @@
     <PackageReference Include="NHibernate" Version="5.3.12" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Commands.Abstractions\Commands.Abstractions.csproj" />
-  </ItemGroup>
-
 </Project>
