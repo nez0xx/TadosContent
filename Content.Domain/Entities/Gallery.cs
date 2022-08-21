@@ -13,11 +13,13 @@ namespace Content.Domain.Entities
         public Gallery()
         {
         }
-        protected internal Gallery(string title, string link) : base(ContentType.Gallery, title)
-        {
+        protected internal Gallery(string title, List<string> imagesUrls, string link) : base(ContentType.Gallery, title)
+        {   
+            ImagesUrls = imagesUrls;
             Link = link;
         }
 
+        public List<string> ImagesUrls { get; set; }
         public virtual string Link { get; protected set; }
     }
 }

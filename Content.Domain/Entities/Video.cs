@@ -13,11 +13,11 @@ namespace Content.Domain.Entities
         public Video()
         {
         }
-        protected internal Video(string title, string link) : base(ContentType.Video, title)
+        protected internal Video(string title, string url) : base(ContentType.Video, title)
         {
-            Link = link;
+            Url = url;
         }
 
-        public virtual string Link { get; protected set; }
+        public virtual string Url { get; protected set; }
     }
 }

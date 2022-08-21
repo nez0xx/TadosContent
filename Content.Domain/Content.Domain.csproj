@@ -9,9 +9,4 @@
     <ProjectReference Include="..\Queries.Abstractions\Queries.Abstractions.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\" />
-    <Folder Include="Commands\" />
-  </ItemGroup>
-
 </Project>

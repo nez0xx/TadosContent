@@ -4,4 +4,10 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.Abstractions\Domain.Abstractions.csproj" />
+    <ProjectReference Include="..\NHibernate.Infrastructure.AutoMapping\NHibernate.Infrastructure.AutoMapping.csproj" />
+    <ProjectReference Include="..\Repositories.Abstractions\Repositories.Abstractions.csproj" />
+  </ItemGroup>
+
 </Project>

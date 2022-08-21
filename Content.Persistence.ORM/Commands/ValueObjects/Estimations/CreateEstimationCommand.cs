@@ -6,10 +6,10 @@
     using global::Commands.Abstractions;
 
 
-    public class CreateFeedingCommand : IAsyncCommand<CreateFeedingCommandContext>
+    public class CreateEstiomationCommand : IAsyncCommand<CreateEstimationCommandContext>
     {
         public Task ExecuteAsync(
-            CreateFeedingCommandContext commandContext,
+            CreateEstimationCommandContext commandContext,
             CancellationToken cancellationToken = default)
         {
             return Task.CompletedTask;

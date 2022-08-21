@@ -9,6 +9,12 @@ namespace Content.Domain.Entities
 {
     public class User : IEntity
     {
+
+        [Obsolete("Only for reflection", true)]
+        public User()
+        {
+        }
+
         protected internal User(City city, string email)
         {
             City = city;  

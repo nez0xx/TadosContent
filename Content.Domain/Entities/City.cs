@@ -13,7 +13,7 @@ namespace Content.Domain.Entities
         public City()
         {
         }
-        protected internal City(long id, string name, Country country)
+        protected internal City(string name, Country country)
         {
             if (country == null)
                 throw new ArgumentNullException(nameof(country));
