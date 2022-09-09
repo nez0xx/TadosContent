@@ -34,9 +34,9 @@
             return Session.DeleteAsync(objectWithId, cancellationToken);
         }
 
-        public Task UpdateAsync(THasId objectWithId, CancellationToken cancellationToken = default)
+        public Task UpdateAsync(THasId objectWithId, long id, CancellationToken cancellationToken = default)
         {
-            return Task.CompletedTask;
+            return Session.UpdateAsync(objectWithId, id, cancellationToken);
         }
 
         public Task<THasId> GetByIdAsync(long id, CancellationToken cancellationToken = default)

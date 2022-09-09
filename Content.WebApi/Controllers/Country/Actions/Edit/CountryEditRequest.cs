@@ -1,6 +1,7 @@
 ﻿namespace Content.WebApi.Controllers.Country.Actions.Edit
 {
-    public record CountryEditRequest
+    using Api.Requests.Abstractions;
+    public record CountryEditRequest : IRequest
     {
         public long Id { get; set; }
         

@@ -1,4 +1,5 @@
 ﻿namespace Content.WebApi.Controllers.City.Actions.Create
 {
-    public record CityCreateResponse(long Id);
+    using Api.Requests.Abstractions;
+    public record CityCreateResponse(long Id) : IResponse;
 }

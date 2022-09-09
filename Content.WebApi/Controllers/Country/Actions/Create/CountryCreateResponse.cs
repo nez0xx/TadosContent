@@ -1,4 +1,5 @@
 ﻿namespace Content.WebApi.Controllers.Country.Actions.Create
 {
-    public record CountryCreateResponse(long Id);
+    using Api.Requests.Abstractions;
+    public record CountryCreateResponse(long Id) : IResponse;
 }

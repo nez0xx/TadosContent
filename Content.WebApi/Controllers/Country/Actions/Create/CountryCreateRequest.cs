@@ -1,6 +1,7 @@
 ﻿namespace Content.WebApi.Controllers.Country.Actions.Create
 {
-    public record CountryCreateRequest
+    using Api.Requests.Abstractions;
+    public record CountryCreateRequest : IRequest<CountryCreateResponse>
     {
         public string Name { get; set; }
     }

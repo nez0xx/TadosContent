@@ -7,6 +7,8 @@
     public interface ICityService : IDomainService
     {
         Task<City> CreateCityAsync(string name, Country country, CancellationToken cancellationToken = default);
+
+        Task UpdateCityAsync(City city, long id, CancellationToken cancellationToken = default);
     }
 }
 
