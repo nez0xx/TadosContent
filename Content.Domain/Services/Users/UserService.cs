@@ -7,7 +7,7 @@
     using Entities;
     using global::Commands.Abstractions;
     using Queries.Abstractions;
-
+    
     public class UserService : IUserService
     {
         private readonly IAsyncCommandBuilder _asyncCommandBuilder;
@@ -27,6 +27,11 @@
             await _asyncCommandBuilder.CreateAsync(user, cancellationToken);
 
             return user;
+        }
+
+        public async Task UpdateUserAsync(User user, long id, CancellationToken cancellationToken = default)
+        {
+            await _asyncCommandBuilder.UpdateAsync(user, id, cancellationToken);
         }
     }
 }

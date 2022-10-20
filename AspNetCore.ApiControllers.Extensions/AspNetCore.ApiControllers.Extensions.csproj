@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Api.Requests.Abstractions\Api.Requests.Abstractions.csproj" />
+    <ProjectReference Include="..\AspNetCore.ApiControllers.Abstractions\AspNetCore.ApiControllers.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

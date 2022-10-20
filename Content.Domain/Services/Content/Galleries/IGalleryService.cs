@@ -13,6 +13,9 @@
             List<string> imagesUrls, 
             string link,
             CancellationToken cancellationToken = default);
+        /*
+        Task UpdateGalleryAsync(Gallery gallery, long id,
+            CancellationToken cancellationToken = default);*/
     }
 }
 

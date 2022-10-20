@@ -29,5 +29,9 @@
 
             return article;
         }
+        public async Task UpdateArticleAsync(Article article, long id, CancellationToken cancellationToken = default)
+        {
+            await _asyncCommandBuilder.UpdateAsync(article, id, cancellationToken);
+        }
     }
 }

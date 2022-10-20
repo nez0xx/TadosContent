@@ -26,7 +26,6 @@
 
             Estimation estimation = content.Estimate(user, digit);
 
-            await _commandBuilder.UpdateAsync(estimation, cancellationToken);
             await _commandBuilder.ExecuteAsync(new CreateEstimationCommandContext(user, estimation), cancellationToken);
         }
     }

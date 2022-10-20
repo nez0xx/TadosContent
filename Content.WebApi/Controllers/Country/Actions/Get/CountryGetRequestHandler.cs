@@ -1,4 +1,4 @@
-﻿namespace Content.WebApi.Controllers.City.Actions.Get
+﻿namespace Content.WebApi.Controllers.Country.Actions.Get
 {
     using System;
     using System.Threading.Tasks;
@@ -9,14 +9,14 @@
     using Dto;
     using Queries.Abstractions;
 
-    public class CityGetRequestHandler : IAsyncRequestHandler<CityGetRequest, CityGetResponse>
+    public class CountryGetRequestHandler : IAsyncRequestHandler<CountryGetRequest, CountryGetResponse>
     {
         private readonly IAsyncQueryBuilder _asyncQueryBuilder;
         private readonly IMapper _mapper;
 
 
 
-        public CityGetRequestHandler(IAsyncQueryBuilder asyncQueryBuilder, IMapper mapper)
+        public CountryGetRequestHandler(IAsyncQueryBuilder asyncQueryBuilder, IMapper mapper)
         {
             _asyncQueryBuilder = asyncQueryBuilder ?? throw new ArgumentNullException(nameof(asyncQueryBuilder));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
@@ -24,13 +24,13 @@
 
 
 
-        public async Task<CityGetResponse> ExecuteAsync(CityGetRequest request)
+        public async Task<CountryGetResponse> ExecuteAsync(CountryGetRequest request)
         {
-            City city = await _asyncQueryBuilder
-                .For<City>()
+            Country country = await _asyncQueryBuilder
+                .For<Country>()
                 .WithAsync(new FindById(request.Id));
 
-            return new CityGetResponse(_mapper.Map<CityDto>(city));
+            return new CountryGetResponse(_mapper.Map<CountryDto>(country));
         }
     }
 }

@@ -10,6 +10,9 @@
             string title,
             string url,
             CancellationToken cancellationToken = default);
+        /*
+        Task UpdateVideoAsync(Video video, long id,
+            CancellationToken cancellationToken = default);*/
     }
 }
 

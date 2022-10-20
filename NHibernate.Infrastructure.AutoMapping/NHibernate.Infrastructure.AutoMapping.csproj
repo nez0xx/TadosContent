@@ -9,4 +9,10 @@
     <PackageReference Include="NHibernate" Version="5.3.12" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Common.DataAnnotations\Common.DataAnnotations.csproj" />
+    <ProjectReference Include="..\Domain.Abstractions\Domain.Abstractions.csproj" />
+    <ProjectReference Include="..\Linq.AsyncQueryable.Abstractions\Linq.AsyncQueryable.Abstractions.csproj" />
+  </ItemGroup>
+
 </Project>

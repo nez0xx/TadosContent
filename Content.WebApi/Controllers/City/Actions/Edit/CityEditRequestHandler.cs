@@ -24,11 +24,12 @@
 
         public async Task ExecuteAsync(CityEditRequest request)
         {
-            City city = await _asyncQueryBuilder
-                .For<City>()
-                .WithAsync(new FindById(request.Id));
 
-             await _cityService.UpdateCityAsync(city);
+            Country country = await _asyncQueryBuilder
+                .For<Country>()
+                .WithAsync(new FindById(request.CountryId));
+            City city_new = await _cityService.CreateCityAsync(request.Name, country);
+            await _cityService.UpdateCityAsync(city_new, request.Id);
 
         }
     }

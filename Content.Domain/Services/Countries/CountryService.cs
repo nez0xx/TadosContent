@@ -29,5 +29,10 @@
 
             return country;
         }
+
+        public async Task UpdateCountryAsync(Country country, long id, CancellationToken cancellationToken = default)
+        {
+            await _asyncCommandBuilder.UpdateAsync(country, id, cancellationToken);
+        }
     }
 }

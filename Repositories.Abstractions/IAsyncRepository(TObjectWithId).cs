@@ -12,8 +12,8 @@
 
         Task DeleteAsync(THasId objectWithId, CancellationToken cancellationToken = default);
 
-        Task UpdateAsync(THasId objectWithId, long id, CancellationToken cancellationToken = default);
-
+        //Task UpdateAsync(THasId objectWithId, long id, CancellationToken cancellationToken = default);
+        Task UpdateAsync(THasId objectWithId, CancellationToken cancellationToken = default);
         Task<THasId> GetByIdAsync(long id, CancellationToken cancellationToken = default);
 
         Task<List<THasId>> GetAllAsync(CancellationToken cancellationToken = default);

@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Autofac;
+using Autofac.Extensions.ConfiguredModules;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,6 +33,12 @@ namespace Content.WebApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Content.WebApi", Version = "v1"});
             });
+        }
+
+        public void ConfigureContainer(ContainerBuilder containerBuilder)
+        {
+            containerBuilder
+                .RegisterConfiguredModulesFromCurrentAssembly(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

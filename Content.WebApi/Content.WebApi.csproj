@@ -5,14 +5,28 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Autofac" Version="6.4.0" />
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
         <PackageReference Include="AutoMapper" Version="11.0.1" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+        <PackageReference Include="Tados.Autofac.Extensions.ConfiguredModules" Version="1.0.0" />
+        <PackageReference Include="Tados.Autofac.Extensions.TypedFactories" Version="1.0.1.1" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Api.Requests.Abstractions\Api.Requests.Abstractions.csproj" />
       <ProjectReference Include="..\Api.Requests.Hierarchic.Abstractions\Api.Requests.Hierarchic.Abstractions.csproj" />
+      <ProjectReference Include="..\AspNetCore.ApiControllers.Abstractions\AspNetCore.ApiControllers.Abstractions.csproj" />
+      <ProjectReference Include="..\AspNetCore.ApiControllers.Extensions\AspNetCore.ApiControllers.Extensions.csproj" />
       <ProjectReference Include="..\Content.Domain\Content.Domain.csproj" />
+      <ProjectReference Include="..\Content.Persistence.NHibernate\Content.Persistence.NHibernate.csproj" />
+      <ProjectReference Include="..\Content.Persistence.ORM\Content.Persistence.ORM.csproj" />
+      <ProjectReference Include="..\Database.Abstractions\Database.Abstractions.csproj" />
+      <ProjectReference Include="..\Database.Sqlite\Database.Sqlite.csproj" />
+      <ProjectReference Include="..\Database.Transactions.Scoped\Database.Transactions.Scoped.csproj" />
+      <ProjectReference Include="..\NHibernate.Infrastructure\NHibernate.Infrastructure.csproj" />
+      <ProjectReference Include="..\Persistence.Transactions.Behaviors\Persistence.Transactions.Behaviors.csproj" />
     </ItemGroup>
 
 </Project>

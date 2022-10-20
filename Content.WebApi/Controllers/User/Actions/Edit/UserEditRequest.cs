@@ -1,6 +1,7 @@
 ﻿namespace Content.WebApi.Controllers.User.Actions.Edit
 {
-    public record UserEditRequest
+    using Api.Requests.Abstractions;
+    public record UserEditRequest : IRequest
     {
         public long Id { get; set; }
         

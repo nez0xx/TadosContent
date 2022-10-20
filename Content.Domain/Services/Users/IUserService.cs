@@ -10,6 +10,10 @@
             City city, 
             string email,
             CancellationToken cancellationToken = default);
+
+        Task UpdateUserAsync(User user,
+            long id,
+            CancellationToken cancellationToken = default);
     }
 }
 

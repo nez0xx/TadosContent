@@ -8,6 +8,8 @@
     {
         Task<Country> CreateCountryAsync(
             string name,
+              CancellationToken cancellationToken = default);
+        Task UpdateCountryAsync(Country country, long id,
             CancellationToken cancellationToken = default);
     }
 }

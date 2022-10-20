@@ -31,15 +31,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Linq.AsyncQueryable.Abstrac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Linq.Providers.Abstractions", "Linq.Providers.Abstractions\Linq.Providers.Abstractions.csproj", "{1D3F1A31-3E53-43CE-9EDE-55CA04DEFB0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json.Converters.Hierarchy", "Json.Converters.Hierarchy\Json.Converters.Hierarchy.csproj", "{6FF3B896-3FD1-4938-BC30-A2E178BD51F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Json.Converters.Hierarchy", "Json.Converters.Hierarchy\Json.Converters.Hierarchy.csproj", "{6FF3B896-3FD1-4938-BC30-A2E178BD51F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.DataAnnotations", "Common.DataAnnotations\Common.DataAnnotations.csproj", "{EEBB2110-941E-49D4-B133-D09D28ED0E30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.DataAnnotations", "Common.DataAnnotations\Common.DataAnnotations.csproj", "{EEBB2110-941E-49D4-B133-D09D28ED0E30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.DataAnnotations.Hierarchy", "Common.DataAnnotations.Hierarchy\Common.DataAnnotations.Hierarchy.csproj", "{972B042F-7D8F-4B3A-AFF5-A4A55B93C2A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.DataAnnotations.Hierarchy", "Common.DataAnnotations.Hierarchy\Common.DataAnnotations.Hierarchy.csproj", "{972B042F-7D8F-4B3A-AFF5-A4A55B93C2A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Requests.Abstractions", "Api.Requests.Abstractions\Api.Requests.Abstractions.csproj", "{8A12F688-6F0F-40FD-8209-72CDE33768E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Requests.Abstractions", "Api.Requests.Abstractions\Api.Requests.Abstractions.csproj", "{8A12F688-6F0F-40FD-8209-72CDE33768E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Requests.Hierarchic.Abstractions", "Api.Requests.Hierarchic.Abstractions\Api.Requests.Hierarchic.Abstractions.csproj", "{172929CA-82DF-4A61-80BE-35559F95F563}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Requests.Hierarchic.Abstractions", "Api.Requests.Hierarchic.Abstractions\Api.Requests.Hierarchic.Abstractions.csproj", "{172929CA-82DF-4A61-80BE-35559F95F563}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.ApiControllers.Abstractions", "AspNetCore.ApiControllers.Abstractions\AspNetCore.ApiControllers.Abstractions.csproj", "{232C9460-24E1-4F31-A16C-B6C459685A90}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.ApiControllers.Extensions", "AspNetCore.ApiControllers.Extensions\AspNetCore.ApiControllers.Extensions.csproj", "{A380033F-002A-4BF6-ABA1-584592BD541E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database.Sqlite", "Database.Sqlite\Database.Sqlite.csproj", "{97ACF10D-73AD-4C43-B944-5594700474DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database.Abstractions", "Database.Abstractions\Database.Abstractions.csproj", "{8A352AD0-00CB-47E1-B0E6-3F91FF7DE7CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database.Transactions.Scoped", "Database.Transactions.Scoped\Database.Transactions.Scoped.csproj", "{5090A360-A930-4AE5-B7B7-3C4998DFF191}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,6 +129,26 @@ Global
 		{172929CA-82DF-4A61-80BE-35559F95F563}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{172929CA-82DF-4A61-80BE-35559F95F563}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{172929CA-82DF-4A61-80BE-35559F95F563}.Release|Any CPU.Build.0 = Release|Any CPU
+		{232C9460-24E1-4F31-A16C-B6C459685A90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{232C9460-24E1-4F31-A16C-B6C459685A90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{232C9460-24E1-4F31-A16C-B6C459685A90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{232C9460-24E1-4F31-A16C-B6C459685A90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A380033F-002A-4BF6-ABA1-584592BD541E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A380033F-002A-4BF6-ABA1-584592BD541E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A380033F-002A-4BF6-ABA1-584592BD541E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A380033F-002A-4BF6-ABA1-584592BD541E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97ACF10D-73AD-4C43-B944-5594700474DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97ACF10D-73AD-4C43-B944-5594700474DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97ACF10D-73AD-4C43-B944-5594700474DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97ACF10D-73AD-4C43-B944-5594700474DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A352AD0-00CB-47E1-B0E6-3F91FF7DE7CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A352AD0-00CB-47E1-B0E6-3F91FF7DE7CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A352AD0-00CB-47E1-B0E6-3F91FF7DE7CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A352AD0-00CB-47E1-B0E6-3F91FF7DE7CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5090A360-A930-4AE5-B7B7-3C4998DFF191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5090A360-A930-4AE5-B7B7-3C4998DFF191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5090A360-A930-4AE5-B7B7-3C4998DFF191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5090A360-A930-4AE5-B7B7-3C4998DFF191}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -137,6 +167,11 @@ Global
 		{972B042F-7D8F-4B3A-AFF5-A4A55B93C2A3} = {76F2438F-DC6D-47BF-AB0F-18268E925CC0}
 		{8A12F688-6F0F-40FD-8209-72CDE33768E0} = {76F2438F-DC6D-47BF-AB0F-18268E925CC0}
 		{172929CA-82DF-4A61-80BE-35559F95F563} = {76F2438F-DC6D-47BF-AB0F-18268E925CC0}
+		{232C9460-24E1-4F31-A16C-B6C459685A90} = {76F2438F-DC6D-47BF-AB0F-18268E925CC0}
+		{A380033F-002A-4BF6-ABA1-584592BD541E} = {76F2438F-DC6D-47BF-AB0F-18268E925CC0}
+		{97ACF10D-73AD-4C43-B944-5594700474DA} = {76F2438F-DC6D-47BF-AB0F-18268E925CC0}
+		{8A352AD0-00CB-47E1-B0E6-3F91FF7DE7CE} = {76F2438F-DC6D-47BF-AB0F-18268E925CC0}
+		{5090A360-A930-4AE5-B7B7-3C4998DFF191} = {76F2438F-DC6D-47BF-AB0F-18268E925CC0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {46E0F799-2F48-4D72-A5DB-8D2C3BA97BAA}

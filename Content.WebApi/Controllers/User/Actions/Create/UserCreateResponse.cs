@@ -1,4 +1,5 @@
 ﻿namespace Content.WebApi.Controllers.User.Actions.Create
 {
-    public record UserCreateResponse(long Id);
+    using Api.Requests.Abstractions;
+    public record UserCreateResponse(long Id) : IResponse;
 }
