@@ -23,7 +23,7 @@
     {
         protected override void Load(ContainerBuilder builder)
         {
-            string connectionString = Configuration.GetConnectionString("Pets");
+            string connectionString = Configuration.GetConnectionString("Content");
 
             bool useOrm = Configuration.GetValue("UseORM", false);
 
