@@ -25,7 +25,7 @@ namespace Content.Domain.ValueObjects
 
         public virtual int Digit { get; protected set; }
 
-        public User User { get; protected set; }
+        public virtual User User { get; protected set; }
 
     }
         
