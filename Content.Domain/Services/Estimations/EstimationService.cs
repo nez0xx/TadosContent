@@ -10,12 +10,12 @@
 
     public class EstimationService : IEstimationService
     {
-        private readonly IAsyncCommandBuilder _commandBuilder;
+        private readonly IAsyncCommandBuilder _asyncCommandBuilder;
 
 
         public EstimationService(IAsyncCommandBuilder commandBuilder)
         {
-            _commandBuilder = commandBuilder ?? throw new ArgumentNullException(nameof(commandBuilder));
+            _asyncCommandBuilder = commandBuilder ?? throw new ArgumentNullException(nameof(commandBuilder));
         }
 
 
@@ -25,8 +25,7 @@
                 throw new ArgumentNullException(nameof(user));
 
             Estimation estimation = content.Estimate(user, digit);
-
-            await _commandBuilder.ExecuteAsync(new CreateEstimationCommandContext(user, estimation), cancellationToken);
+            await _asyncCommandBuilder.CreateAsync(estimation, cancellationToken);
         }
     }
 }

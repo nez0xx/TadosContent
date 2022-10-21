@@ -29,7 +29,7 @@
                 commitPerformer)
         {
         }
-        [HttpGet]
+        [HttpPost]
         [Route("create")]
         [ProducesResponseType(typeof(CityCreateResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

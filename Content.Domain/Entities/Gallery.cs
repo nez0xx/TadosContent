@@ -9,17 +9,19 @@ namespace Content.Domain.Entities
 {
     public class Gallery : Content
     {
+        private readonly ICollection<string> _imagesUrls = new HashSet<string>();
+
         [Obsolete("Only for reflection", true)]
         public Gallery()
         {
         }
         protected internal Gallery(string title, List<string> imagesUrls, string link) : base(ContentType.Gallery, title)
         {   
-            ImagesUrls = imagesUrls;
+            _imagesUrls = imagesUrls;
             Link = link;
         }
 
-        public List<string> ImagesUrls { get; set; }
+        public virtual IEnumerable<string> ImagesUrls => _imagesUrls;
         public virtual string Link { get; protected set; }
     }
 }

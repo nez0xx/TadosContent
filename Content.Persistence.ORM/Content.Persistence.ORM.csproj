@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Commands\ValueObjects\" />
     <Folder Include="Queries\Entities\" />
   </ItemGroup>
 

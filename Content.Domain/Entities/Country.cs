@@ -19,7 +19,7 @@ namespace Content.Domain.Entities
                 throw new ArgumentException("Value cannot be null or whitespace.", nameof(name));
         }
 
-        public long Id { get; protected set; }
+        public virtual long Id { get; protected set; }
 
         public virtual string Name { get; protected set; }
     }
