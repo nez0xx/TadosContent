@@ -36,24 +36,26 @@
         [Route("create")]
         [ProducesResponseType(typeof(CountryCreateResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> Create(CountryCreateRequest request) {
-            CountryCreateRequest rqst = request;
-            return this.RequestAsync()
+        public Task<IActionResult> Create(CountryCreateRequest request) => 
+                this.RequestAsync()
                 .For<CountryCreateResponse>()
-                .With(request); 
-         }
+                .With(request);
 
         [HttpPost]
         [Route("edit")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> Edit(CountryEditRequest request) => throw new NotImplementedException();
+        public Task<IActionResult> Edit(CountryEditRequest request) => this.RequestAsync(request);
+                
 
         [HttpPost]
         [Route("get")]
         [ProducesResponseType(typeof(CountryGetResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> Get(CountryGetRequest request) => throw new NotImplementedException();
+        public Task<IActionResult> Get(CountryGetRequest request) => 
+                this.RequestAsync()
+                .For<CountryGetResponse>()
+                .With(request);
 
         [HttpPost]
         [Route("getList")]

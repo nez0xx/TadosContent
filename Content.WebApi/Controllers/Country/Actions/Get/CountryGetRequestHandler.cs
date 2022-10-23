@@ -12,14 +12,12 @@
     public class CountryGetRequestHandler : IAsyncRequestHandler<CountryGetRequest, CountryGetResponse>
     {
         private readonly IAsyncQueryBuilder _asyncQueryBuilder;
-        private readonly IMapper _mapper;
 
 
 
-        public CountryGetRequestHandler(IAsyncQueryBuilder asyncQueryBuilder, IMapper mapper)
+        public CountryGetRequestHandler(IAsyncQueryBuilder asyncQueryBuilder)
         {
             _asyncQueryBuilder = asyncQueryBuilder ?? throw new ArgumentNullException(nameof(asyncQueryBuilder));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
 
@@ -30,7 +28,7 @@
                 .For<Country>()
                 .WithAsync(new FindById(request.Id));
 
-            return new CountryGetResponse(_mapper.Map<CountryDto>(country));
+            return new CountryGetResponse(country);
         }
     }
 }
