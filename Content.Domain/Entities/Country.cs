@@ -14,9 +14,11 @@ namespace Content.Domain.Entities
         {
         }
         protected internal Country(string name)
-        {
+        {   
+
             if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentException("Value cannot be null or whitespace.", nameof(name));
+            Name = name;
         }
 
         public virtual long Id { get; protected set; }

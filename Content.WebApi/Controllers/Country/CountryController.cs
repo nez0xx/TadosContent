@@ -31,14 +31,17 @@
 
         }
 
-      
+
         [HttpPost]
         [Route("create")]
         [ProducesResponseType(typeof(CountryCreateResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> Create(CountryCreateRequest request) => this.RequestAsync()
+        public Task<IActionResult> Create(CountryCreateRequest request) {
+            CountryCreateRequest rqst = request;
+            return this.RequestAsync()
                 .For<CountryCreateResponse>()
-                .With(request);
+                .With(request); 
+         }
 
         [HttpPost]
         [Route("edit")]
