@@ -1,7 +1,7 @@
 ﻿namespace Content.WebApi.Controllers.Country.Actions.Get
 {
-    using Domain.Entities;
+    using Dto;
     using Api.Requests.Abstractions;
 
-    public record CountryGetResponse(Country Country) : IResponse;
+    public record CountryGetResponse(CountryDto Country) : IResponse;
 }

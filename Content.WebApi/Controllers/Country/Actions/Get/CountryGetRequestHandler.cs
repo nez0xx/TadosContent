@@ -29,7 +29,7 @@
                 .For<Country>()
                 .WithAsync(new FindById(request.Id));
 
-            return new CountryGetResponse(country);
+            return new CountryGetResponse(_mapper.Map<CountryDto>(country)); 
         }
     }
 }
