@@ -12,12 +12,13 @@
     public class CountryGetRequestHandler : IAsyncRequestHandler<CountryGetRequest, CountryGetResponse>
     {
         private readonly IAsyncQueryBuilder _asyncQueryBuilder;
+        private readonly IMapper _mapper;
 
 
-
-        public CountryGetRequestHandler(IAsyncQueryBuilder asyncQueryBuilder)
+        public CountryGetRequestHandler(IAsyncQueryBuilder asyncQueryBuilder, IMapper mapper)
         {
             _asyncQueryBuilder = asyncQueryBuilder ?? throw new ArgumentNullException(nameof(asyncQueryBuilder));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
 
