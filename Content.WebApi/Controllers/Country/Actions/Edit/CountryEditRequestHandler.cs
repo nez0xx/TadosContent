@@ -24,11 +24,12 @@
 
         public async Task ExecuteAsync(CountryEditRequest request)
         {
-             Country country = await _asyncQueryBuilder
+            Country country = await _asyncQueryBuilder
                 .For<Country>()
                 .WithAsync(new FindById(request.Id));
+            
 
-             await _countryService.UpdateCountryAsync(country, request.Id);
+            country.SetName(request.Name);
 
         }
     }
