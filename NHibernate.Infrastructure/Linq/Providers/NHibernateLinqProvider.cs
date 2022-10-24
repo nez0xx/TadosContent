@@ -19,7 +19,8 @@
 
 
         public IQueryable<THasId> Query<THasId>() where THasId : class, IHasId, new()
-        {
+        {   
+            
             return _sessionProvider.CurrentSession.Query<THasId>();
         }
     }

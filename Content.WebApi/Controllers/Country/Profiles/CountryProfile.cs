@@ -1,13 +1,14 @@
-﻿namespace Content.WebApi.Controllers.Country.Proifiles { 
+﻿namespace Content.WebApi.Controllers.Country.Profiles { 
     using AutoMapper;
     using Domain.Entities;
     using Dto;
 
-    public class FoodProfile : Profile
+    public class CountryProfile : Profile
     {
-        public FoodProfile()
+        public CountryProfile()
         {
             CreateMap<Country, CountryDto>();
+            CreateMap<Country, CountryListItemDto>();
         }
     }
 }

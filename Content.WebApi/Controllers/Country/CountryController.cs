@@ -45,7 +45,8 @@
         [Route("edit")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> Edit(CountryEditRequest request) => this.RequestAsync(request);
+        public Task<IActionResult> Edit(CountryEditRequest request) => 
+                this.RequestAsync(request);
                 
 
         [HttpPost]
@@ -61,6 +62,9 @@
         [Route("getList")]
         [ProducesResponseType(typeof(CountryGetListResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> Get(CountryGetListRequest request) => throw new NotImplementedException();
+        public Task<IActionResult> Get(CountryGetListRequest request) => 
+            this.RequestAsync()
+                .For<CountryGetListResponse>()
+                .With(request);
     }
 }

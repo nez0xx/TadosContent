@@ -14,8 +14,4 @@
     <ProjectReference Include="..\Repositories.Abstractions\Repositories.Abstractions.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Queries\Entities\" />
-  </ItemGroup>
-
 </Project>
