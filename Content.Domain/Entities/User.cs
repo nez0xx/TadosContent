@@ -25,5 +25,10 @@ namespace Content.Domain.Entities
         public virtual City City { get; protected set; }
 
         public virtual string Email { get; protected set; }
+
+        public virtual void SetCity(City city)
+        {
+            City = city;
+        }
     }
 }

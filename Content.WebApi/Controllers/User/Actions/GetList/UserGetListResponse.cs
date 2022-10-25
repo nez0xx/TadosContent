@@ -2,6 +2,6 @@
 {
     using Dto;
     using Infrastructure.Pagination;
-
-    public record UserGetListResponse(PaginatedList<UserListItemDto> Page);
+    using Api.Requests.Abstractions;
+    public record UserGetListResponse(PaginatedList<UserListItemDto> Page) : IResponse;
 }

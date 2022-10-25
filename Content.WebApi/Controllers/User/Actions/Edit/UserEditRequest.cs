@@ -5,6 +5,6 @@
     {
         public long Id { get; set; }
         
-        public long CityId { get; set; }
+        public long? CityId { get; set; }
     }
 }

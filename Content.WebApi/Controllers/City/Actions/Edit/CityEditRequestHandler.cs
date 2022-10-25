@@ -10,14 +10,12 @@
     public class CityEditRequestHandler : IAsyncRequestHandler<CityEditRequest>
     {
         private readonly IAsyncQueryBuilder _asyncQueryBuilder;
-        private readonly ICityService _cityService;
 
 
 
-        public CityEditRequestHandler(IAsyncQueryBuilder asyncQueryBuilder, ICityService cityService)
+        public CityEditRequestHandler(IAsyncQueryBuilder asyncQueryBuilder)
         {
             _asyncQueryBuilder = asyncQueryBuilder ?? throw new ArgumentNullException(nameof(asyncQueryBuilder));
-            _cityService = cityService ?? throw new ArgumentNullException(nameof(cityService));
         }
 
 
@@ -42,6 +40,7 @@
             {
                 city.SetName(request.Name);
             }
+
         }
     }
 }

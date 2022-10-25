@@ -10,14 +10,12 @@
     public class UserEditRequestHandler : IAsyncRequestHandler<UserEditRequest>
     {
         private readonly IAsyncQueryBuilder _asyncQueryBuilder;
-        private readonly IUserService _userService;
 
 
 
-        public UserEditRequestHandler(IAsyncQueryBuilder asyncQueryBuilder, IUserService userService)
+        public UserEditRequestHandler(IAsyncQueryBuilder asyncQueryBuilder)
         {
             _asyncQueryBuilder = asyncQueryBuilder ?? throw new ArgumentNullException(nameof(asyncQueryBuilder));
-            _userService = userService ?? throw new ArgumentNullException(nameof(userService));
         }
 
 
@@ -28,8 +26,15 @@
                 .For<User>()
                 .WithAsync(new FindById(request.Id));
 
-             await _userService.UpdateUserAsync(user, request.Id);
+            if (request.CityId != null)
+            {
+                City city = await _asyncQueryBuilder
+                .For<City>()
+                .WithAsync(new FindById(request.CityId.Value));
 
+                user.SetCity(city);
+
+            }
         }
     }
 }
