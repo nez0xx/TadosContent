@@ -9,6 +9,7 @@
 
         public string Name { get; set; }
 
-        public CountryDto CountryDto { get; set; }
+        //public CountryDto CountryDto { get; set; }
+        public CountryDto Country { get; set; }
     }
 }

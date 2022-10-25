@@ -22,6 +22,21 @@ namespace Content.Domain.Entities
             Country = country;
         }
 
+        public virtual void SetCountry(Country country)
+        {
+            if (country == null)
+                throw new ArgumentNullException(nameof(country));
+
+            Country = country;
+        }
+        public virtual void SetName(string name)
+        {
+            if (name == null)
+                throw new ArgumentNullException(nameof(name));
+
+            Name = name;
+        }
+
         public virtual long Id { get; protected set; }
 
         public virtual string Name { get; protected set; }

@@ -2,7 +2,8 @@
 {
     using Dto;
     using Infrastructure.Pagination;
+    using Api.Requests.Abstractions;
 
 
-    public record CityGetListResponse(PaginatedList<CityListItemDto> Page);
+    public record CityGetListResponse(PaginatedList<CityListItemDto> Page) : IResponse;
 }

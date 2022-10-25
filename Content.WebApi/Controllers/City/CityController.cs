@@ -40,18 +40,23 @@
         [Route("edit")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> Edit(CityEditRequest request) => throw new NotImplementedException();
+        public Task<IActionResult> Edit(CityEditRequest request) => this.RequestAsync(request);
 
         [HttpPost]
         [Route("get")]
         [ProducesResponseType(typeof(CityGetResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> Get(CityGetRequest request) => throw new NotImplementedException();
+        public Task<IActionResult> Get(CityGetRequest request) => 
+            this.RequestAsync()
+                .For<CityGetResponse>()
+                .With(request);
 
         [HttpPost]
         [Route("getList")]
         [ProducesResponseType(typeof(CityGetListResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> Get(CityGetListRequest request) => throw new NotImplementedException();
+        public Task<IActionResult> Get(CityGetListRequest request) => this.RequestAsync()
+                .For<CityGetListResponse>()
+                .With(request);
     }
 }
