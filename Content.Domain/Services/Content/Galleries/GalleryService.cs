@@ -19,11 +19,11 @@
         }
 
 
-        public async Task<Gallery> CreateGalleryAsync(string title, List<string> imagesUrls, string link, User creator,  CancellationToken cancellationToken = default)
+        public async Task<Gallery> CreateGalleryAsync(string title, List<string> imagesUrls, string coverUrl, User creator,  CancellationToken cancellationToken = default)
         {
 
 
-            Gallery gallery = new Gallery(title, imagesUrls, link, creator);
+            Gallery gallery = new Gallery(title, imagesUrls, coverUrl, creator);
 
             await _asyncCommandBuilder.CreateAsync(gallery, cancellationToken);
 

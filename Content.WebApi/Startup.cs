@@ -1,21 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Autofac;
-using Autofac.Extensions.ConfiguredModules;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
-
 namespace Content.WebApi
 {
+    using Autofac;
+
+    using Json.Converters.Hierarchy;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Autofac.Extensions.ConfiguredModules;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.Hosting;
+    using Microsoft.OpenApi.Models;
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -28,12 +23,17 @@ namespace Content.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(ApplicationAssemblyMarker).Assembly);
-            services.AddControllers();
+            services
+                    .AddAutoMapper(typeof(ApplicationAssemblyMarker).Assembly)
+                    .AddControllers()
+                    .AddNewtonsoftJson(options =>
+                      {
+                          options.SerializerSettings.Converters.Add(new HierarchyJsonConverter());
+                      });
             services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo {Title = "Content.WebApi", Version = "v1"});
-            });
+                     {
+                        c.SwaggerDoc("v1", new OpenApiInfo { Title = "Content.WebApi", Version = "v1" });
+                     });
         }
 
         public void ConfigureContainer(ContainerBuilder containerBuilder)

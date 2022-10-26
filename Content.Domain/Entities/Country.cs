@@ -9,7 +9,7 @@ namespace Content.Domain.Entities
 {
     public class Country : IEntity
     {
-        [Obsolete("Only for reflection", true)]
+       // [Obsolete("Only for reflection", true)]
         public Country()
         {
         }

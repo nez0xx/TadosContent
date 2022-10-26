@@ -11,7 +11,7 @@ namespace Content.Domain.Entities
     {
         private readonly ICollection<Estimation> _estimations = new HashSet<Estimation>();
 
-        [Obsolete("Only for reflection", true)]
+        //[Obsolete("Only for reflection", true)]
         public Content()
         {
         }

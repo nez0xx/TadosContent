@@ -11,7 +11,7 @@ namespace Content.Domain.Entities
     public class Article:  Content
     {
 
-        [Obsolete("Only for reflection", true)]
+        //[Obsolete("Only for reflection", true)]
         public Article()
         {
         }

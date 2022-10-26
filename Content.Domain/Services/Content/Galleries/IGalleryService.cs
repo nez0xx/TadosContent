@@ -11,7 +11,7 @@
         Task<Gallery> CreateGalleryAsync(
             string title, 
             List<string> imagesUrls, 
-            string link,
+            string coverUrl,
             User creator,
             CancellationToken cancellationToken = default);
         /*

@@ -11,18 +11,18 @@ namespace Content.Domain.Entities
     {
         private readonly ICollection<string> _imagesUrls = new HashSet<string>();
 
-        [Obsolete("Only for reflection", true)]
+        //[Obsolete("Only for reflection", true)]
         public Gallery()
         {
         }
         
-        protected internal Gallery(string title, List<string> imagesUrls, string link, User creator) : base(ContentType.Gallery, title, creator)
+        protected internal Gallery(string title, List<string> imagesUrls, string coverUrl, User creator) : base(ContentType.Gallery, title, creator)
         {   
             _imagesUrls = imagesUrls;
-            Link = link;
+            CoverUrl = coverUrl;
         }
 
         public virtual IEnumerable<string> ImagesUrls => _imagesUrls;
-        public virtual string Link { get; protected set; }
+        public virtual string CoverUrl { get; protected set; }
     }
 }
