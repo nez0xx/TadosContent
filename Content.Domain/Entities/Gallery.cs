@@ -15,7 +15,8 @@ namespace Content.Domain.Entities
         public Gallery()
         {
         }
-        protected internal Gallery(string title, List<string> imagesUrls, string link) : base(ContentType.Gallery, title)
+        
+        protected internal Gallery(string title, List<string> imagesUrls, string link, User creator) : base(ContentType.Gallery, title, creator)
         {   
             _imagesUrls = imagesUrls;
             Link = link;

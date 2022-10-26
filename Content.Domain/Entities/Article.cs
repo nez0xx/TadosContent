@@ -5,15 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using Content.Domain.Enums;
 
+
 namespace Content.Domain.Entities
 {
-    public class Article:Content
+    public class Article:  Content
     {
+
         [Obsolete("Only for reflection", true)]
         public Article()
         {
         }
-        protected internal Article(string title, string text):base(ContentType.Article, title)
+        
+        protected internal Article(string title, string text, User creator):base(ContentType.Article, title, creator)
         {
             Text = text;
         }

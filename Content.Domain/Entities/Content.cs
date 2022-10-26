@@ -15,14 +15,15 @@ namespace Content.Domain.Entities
         public Content()
         {
         }
-
-        protected Content(ContentType type, string title)
+        
+        protected Content(ContentType type, string title, User user)
         {
             if (string.IsNullOrWhiteSpace(title))
                 throw new ArgumentException("Value cannot be null or whitespace.", nameof(title));
 
             Type = type;
             Title = title;
+            Creator = user;
         }
 
         public virtual long Id { get; protected set; }

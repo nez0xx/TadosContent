@@ -13,7 +13,8 @@ namespace Content.Domain.Entities
         public Video()
         {
         }
-        protected internal Video(string title, string url) : base(ContentType.Video, title)
+        
+        protected internal Video(string title, string url, User creator) : base(ContentType.Video, title, creator)
         {
             Url = url;
         }

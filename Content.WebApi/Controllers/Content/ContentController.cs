@@ -9,17 +9,20 @@
     using Actions.Rate;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
-
+    using Api.Requests.Abstractions;
+    using Api.Requests.Hierarchic.Abstractions;
+    using AspnetCore.ApiControllers.Extensions;
+    using global::Persistence.Transactions.Behaviors;
 
     [ApiController]
     [Route("api/content")]
-    public class ContentController : Controller
+    public class ContentController : ContentApiControllerBase
     {
-        [HttpPost]
+        /*[HttpPost]
         [Route("createArticle")]
         [ProducesResponseType(typeof(ContentCreateResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> CreateArticle(ContentCreateArticleRequest request) => throw new NotImplementedException();
+        public Task<IActionResult> CreateArticle(CreateArticleHierarchicRequest request) => throw new NotImplementedException();
 
         [HttpPost]
         [Route("createVideo")]
@@ -31,8 +34,29 @@
         [Route("createGallery")]
         [ProducesResponseType(typeof(ContentCreateResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> CreateGallery(ContentCreateGalleryRequest request) => throw new NotImplementedException();
-        
+        public Task<IActionResult> CreateGallery(CreateGalleryHierarchicRequest request) => throw new NotImplementedException();
+        */
+
+        public ContentController(
+            IAsyncRequestBuilder asyncRequestBuilder,
+            IAsyncHierarchicRequestBuilder asyncHierarchicRequestBuilder,
+            IExpectCommit commitPerformer)
+            : base(
+                asyncRequestBuilder,
+                asyncHierarchicRequestBuilder,
+                commitPerformer)
+        {
+        }
+
+        [HttpPost]
+        [Route("create")]
+        [ProducesResponseType(typeof(ContentCreateHierarchicResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public Task<IActionResult> CreateContent(ContentCreateHierarchicRequestBase request) => 
+            this.HierarchicRequestAsync()
+                .For<ContentCreateHierarchicResponse>()
+                .With(request);
+
         [HttpPost]
         [Route("editArticle")]
         [ProducesResponseType(StatusCodes.Status200OK)]

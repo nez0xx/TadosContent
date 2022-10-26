@@ -19,6 +19,7 @@
       <ProjectReference Include="..\Api.Requests.Hierarchic.Abstractions\Api.Requests.Hierarchic.Abstractions.csproj" />
       <ProjectReference Include="..\AspNetCore.ApiControllers.Abstractions\AspNetCore.ApiControllers.Abstractions.csproj" />
       <ProjectReference Include="..\AspNetCore.ApiControllers.Extensions\AspNetCore.ApiControllers.Extensions.csproj" />
+      <ProjectReference Include="..\Common.DataAnnotations.Hierarchy\Common.DataAnnotations.Hierarchy.csproj" />
       <ProjectReference Include="..\Content.Domain\Content.Domain.csproj" />
       <ProjectReference Include="..\Content.Persistence.NHibernate\Content.Persistence.NHibernate.csproj" />
       <ProjectReference Include="..\Content.Persistence.ORM\Content.Persistence.ORM.csproj" />

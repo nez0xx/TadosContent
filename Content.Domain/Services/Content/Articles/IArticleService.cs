@@ -9,8 +9,7 @@
         Task<Article> CreateArticleAsync(
             string title,
             string text,
-            CancellationToken cancellationToken = default);
-        Task UpdateArticleAsync(Article article, long id,
+            User creator,
             CancellationToken cancellationToken = default);
     }
 }

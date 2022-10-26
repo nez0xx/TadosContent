@@ -12,6 +12,7 @@
             string title, 
             List<string> imagesUrls, 
             string link,
+            User creator,
             CancellationToken cancellationToken = default);
         /*
         Task UpdateGalleryAsync(Gallery gallery, long id,

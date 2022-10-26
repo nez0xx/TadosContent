@@ -19,11 +19,11 @@
         }
 
 
-        public async Task<Article> CreateArticleAsync(string title, string text, CancellationToken cancellationToken = default)
+        public async Task<Article> CreateArticleAsync(string title, string text, User creator, CancellationToken cancellationToken = default)
         {
 
 
-            Article article = new Article(title, text);
+            Article article = new Article(title, text, creator);
 
             await _asyncCommandBuilder.CreateAsync(article, cancellationToken);
 

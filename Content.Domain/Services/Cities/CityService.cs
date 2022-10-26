@@ -29,10 +29,5 @@
 
             return city;
         }
-
-        public async Task UpdateCityAsync(City city, long id, CancellationToken cancellationToken = default)
-        {
-            await _asyncCommandBuilder.UpdateAsync(city, id, cancellationToken);
-        }
     }
 }

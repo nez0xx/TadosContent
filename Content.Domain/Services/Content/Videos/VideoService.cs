@@ -19,11 +19,11 @@
         }
 
 
-        public async Task<Video> CreateVideoAsync(string title, string url, CancellationToken cancellationToken = default)
+        public async Task<Video> CreateVideoAsync(string title, string url, User creator, CancellationToken cancellationToken = default)
         {
 
 
-            Video video = new Video(title, url);
+            Video video = new Video(title, url, creator);
 
             await _asyncCommandBuilder.CreateAsync(video, cancellationToken);
 
