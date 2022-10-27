@@ -56,24 +56,31 @@
             this.HierarchicRequestAsync()
                 .For<ContentCreateHierarchicResponse>()
                 .With(request);
+        /*
+                [HttpPost]
+                [Route("editArticle")]
+                [ProducesResponseType(StatusCodes.Status200OK)]
+                [ProducesResponseType(StatusCodes.Status400BadRequest)]
+                public Task<IActionResult> EditArticle(ContentEditArticleRequest request) => throw new NotImplementedException();
+
+                [HttpPost]
+                [Route("editVideo")]
+                [ProducesResponseType(StatusCodes.Status200OK)]
+                [ProducesResponseType(StatusCodes.Status400BadRequest)]
+                public Task<IActionResult> EditVideo(ContentEditVideoRequest request) => throw new NotImplementedException();
+
+                [HttpPost]
+                [Route("editGallery")]
+                [ProducesResponseType(StatusCodes.Status200OK)]
+                [ProducesResponseType(StatusCodes.Status400BadRequest)]
+                public Task<IActionResult> EditGallery(ContentEditGalleryRequest request) => throw new NotImplementedException();
+        */
 
         [HttpPost]
-        [Route("editArticle")]
+        [Route("edit")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> EditArticle(ContentEditArticleRequest request) => throw new NotImplementedException();
-
-        [HttpPost]
-        [Route("editVideo")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> EditVideo(ContentEditVideoRequest request) => throw new NotImplementedException();
-        
-        [HttpPost]
-        [Route("editGallery")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> EditGallery(ContentEditGalleryRequest request) => throw new NotImplementedException();
+        public Task<IActionResult> EditGallery(ContentEditHierarchicRequestBase request) => this.HierarchicRequestAsync(request);
 
         [HttpPost]
         [Route("rate")]
@@ -85,7 +92,10 @@
         [Route("get")]
         [ProducesResponseType(typeof(ContentGetResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> Get(ContentGetRequest request) => throw new NotImplementedException();
+        public Task<IActionResult> Get(ContentGetRequest request) 
+                                => this.RequestAsync()
+                                  .For<ContentGetResponse>()
+                                  .With(request);
 
         [HttpPost]
         [Route("getList")]

@@ -51,5 +51,12 @@ namespace Content.Domain.Entities
             return estimation;
         }
 
+        public virtual void SetTitle(string title)
+        {
+            if (string.IsNullOrWhiteSpace(title))
+                throw new ArgumentException("Value cannot be null or whitespace.", nameof(title));
+            Title = title;
+        }
+
     }
 }

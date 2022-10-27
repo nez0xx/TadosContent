@@ -10,7 +10,7 @@
 
         public UserDto Creator { get; set; }
 
-        public string Name { get; set; }
+        public string Title { get; set; }
         
         public decimal AverageRating { get; set; }
     }

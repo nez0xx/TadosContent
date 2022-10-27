@@ -20,5 +20,12 @@ namespace Content.Domain.Entities
         }
 
         public virtual string Url { get; protected set; }
+
+        public virtual void SetUrl(string url)
+        {
+            if (string.IsNullOrWhiteSpace(url))
+                throw new ArgumentException("Value cannot be null or whitespace.", nameof(url));
+            Url = url;
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Content.WebApi.Controllers.Content.Actions.Get
 {
     using Dto;
-
-    public record ContentGetResponse(ContentDto Content);
+    using Api.Requests.Abstractions;
+    public record ContentGetResponse(ContentDto Content) : IResponse;
 }

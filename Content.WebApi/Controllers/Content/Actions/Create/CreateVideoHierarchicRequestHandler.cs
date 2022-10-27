@@ -1,5 +1,5 @@
 ﻿namespace Content.WebApi.Controllers.Content.Actions.Create
-{
+{ 
     using System;
     using System.Threading.Tasks;
     using Domain.Entities;
