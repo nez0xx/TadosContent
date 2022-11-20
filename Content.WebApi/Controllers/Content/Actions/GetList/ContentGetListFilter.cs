@@ -1,10 +1,10 @@
 ﻿namespace Content.WebApi.Controllers.Content.Actions.GetList
 {
     using Dto;
-
+    using Domain.Enums;
     public record ContentGetListFilter
     {
-        public ContentCategory? Category { get; set; }
+        public ContentType? Type { get; set; }
 
         public long? UserId { get; set; }
 

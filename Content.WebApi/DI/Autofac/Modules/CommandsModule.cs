@@ -1,6 +1,7 @@
 ﻿namespace Content.WebApi.DI.Autofac.Modules
 {
     using Commands.Abstractions;
+    using Content.Persistence.ORM.Queries;
     using global::Autofac;
     using global::Autofac.Extensions.ConfiguredModules;
     using Microsoft.Extensions.Configuration;

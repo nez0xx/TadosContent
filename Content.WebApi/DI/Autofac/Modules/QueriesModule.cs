@@ -1,11 +1,11 @@
 ﻿namespace Content.WebApi.DI.Autofac.Modules
 {
+    using Content.Persistence.ORM.Queries;
     using global::Autofac;
     using global::Autofac.Extensions.ConfiguredModules;
     using Microsoft.Extensions.Configuration;
     using Persistence;
     using Persistence.ORM;
-    using Persistence.ORM.Queries;
     using Queries.Abstractions;
     using Tados.Autofac.Extensions.TypedFactories;
 

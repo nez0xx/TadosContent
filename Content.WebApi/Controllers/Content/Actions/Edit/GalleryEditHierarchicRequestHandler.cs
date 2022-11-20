@@ -28,7 +28,7 @@
                 .For<Gallery>()
                 .WithAsync(new FindById(id));
 
-            if (gallery == null) throw new ArgumentNullException(nameof(id));
+            if (gallery == null) throw new Exception(nameof(id));
              
             if (request.Title != null) gallery.SetTitle(request.Title);
 

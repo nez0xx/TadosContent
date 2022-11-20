@@ -101,6 +101,8 @@
         [Route("getList")]
         [ProducesResponseType(typeof(ContentGetListResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> Get(ContentGetListRequest request) => throw new NotImplementedException();
+        public Task<IActionResult> Get(ContentGetListRequest request) => this.RequestAsync()
+            .For<ContentGetListResponse>()
+            .With(request);
     }
 }

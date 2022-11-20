@@ -44,7 +44,7 @@
 
 
             return new CityGetListResponse(
-                new PaginatedList<CityListItemDto>(0, _mapper.Map<IEnumerable<CityListItemDto>>(cities))
+                new PaginatedList<CityListItemDto>(cities.Count, _mapper.Map<IEnumerable<CityListItemDto>>(cities))
                 );
 
         }

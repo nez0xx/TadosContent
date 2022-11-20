@@ -38,7 +38,7 @@
             }
 
             return new CountryGetListResponse(
-                new PaginatedList<CountryListItemDto>(0, _mapper.Map<IEnumerable<CountryListItemDto>>(countries))
+                new PaginatedList<CountryListItemDto>(countries.Count, _mapper.Map<IEnumerable<CountryListItemDto>>(countries))
                 );
       
         }
