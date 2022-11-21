@@ -12,12 +12,12 @@ namespace Content.Persistence.ORM.Queries.Entities.Content
     using Linq.Providers.Abstractions;
     using global::Queries.Abstractions;
 
-    public class FindVideosBySearchUserIdAndTypeQuery :
-        LinqAsyncQueryBase<Video, FindContentBySearchUserIdAndType, List<Video>>
+    public class FindVideosBySearchAndUserIdQuery :
+        LinqAsyncQueryBase<Video, FindContentBySearchAndUserId, List<Video>>
     {
         private IAsyncQueryBuilder _asyncQueryBuilder;
 
-        public FindVideosBySearchUserIdAndTypeQuery(
+        public FindVideosBySearchAndUserIdQuery(
             ILinqProvider linqProvider,
             IAsyncQueryableFactory asyncQueryableFactory, IAsyncQueryBuilder asyncQueryBuilder) : base(linqProvider, asyncQueryableFactory)
         {
@@ -26,7 +26,7 @@ namespace Content.Persistence.ORM.Queries.Entities.Content
 
 
         public override Task<List<Video>> AskAsync(
-            FindContentBySearchUserIdAndType criterion,
+            FindContentBySearchAndUserId criterion,
             CancellationToken cancellationToken = default)
         {
             IQueryable<Video> query = Query;

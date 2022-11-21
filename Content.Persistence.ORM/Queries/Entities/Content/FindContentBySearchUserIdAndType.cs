@@ -39,58 +39,56 @@ namespace Content.Persistence.ORM.Queries.Entities.Content
 
                 if (criterion.Type == ContentType.Article)
                 {
-                    IAsyncQueryable<Article> contentQuery = await _asyncQueryBuilder
-                    .For<IAsyncQueryable<Article>>()
-                    .WithAsync(new FindArticlesBySearchAndUserId(criterion.UserId, criterion.Search));
+                    List<Article> contentQuery = await _asyncQueryBuilder
+                    .For<List<Article>>()
+                    .WithAsync(new FindContentBySearchAndUserId(criterion.UserId, criterion.Search));
 
-                    content.Concat(await contentQuery.ToListAsync());
+                    content = content.Concat(contentQuery).ToList();
                 }
                 if (criterion.Type == ContentType.Video)
                 {
-                    IAsyncQueryable<Video> contentQuery = await _asyncQueryBuilder
-                    .For<IAsyncQueryable<Video>>()
-                    .WithAsync(new FindVideosBySearchAndUserId(criterion.UserId, criterion.Search));
+                    List<Video> contentQuery = await _asyncQueryBuilder
+                    .For<List<Video>>()
+                    .WithAsync(new FindContentBySearchAndUserId(criterion.UserId, criterion.Search));
 
-                    content.Concat(await contentQuery.ToListAsync());
+                    content = content.Concat(contentQuery).ToList();
                 }
                 if (criterion.Type == ContentType.Gallery)
                 {
-                    IAsyncQueryable<Gallery> contentQuery = await _asyncQueryBuilder
-                    .For<IAsyncQueryable<Gallery>>()
-                    .WithAsync(new FindGalleriesBySearchAndUserId(criterion.UserId, criterion.Search));
+                    List<Gallery> contentQuery = await _asyncQueryBuilder
+                    .For<List<Gallery>>()
+                    .WithAsync(new FindContentBySearchAndUserId(criterion.UserId, criterion.Search));
 
-                    content.Concat(await contentQuery.ToListAsync());
+                    content = content.Concat(contentQuery).ToList();
                 }
             }
 
            
             else if(!string.IsNullOrWhiteSpace(criterion.Search))
             {
-                
-                IAsyncQueryable<Article> articles = await _asyncQueryBuilder
-                    .For<IAsyncQueryable<Article>>()
-                    .WithAsync(new FindArticlesBySearchAndUserId(criterion.UserId, criterion.Search));
+
+                List<Article> articles = await _asyncQueryBuilder
+                    .For<List<Article>>()
+                    .WithAsync(new FindContentBySearchAndUserId(criterion.UserId, criterion.Search));
 
 
-                content = (List<Content>)content.Concat(await articles.ToListAsync());
+                content = content.Concat(articles).ToList();
 
-                IAsyncQueryable<Video> videos = await _asyncQueryBuilder
-                    .For<IAsyncQueryable<Video>>()
-                    .WithAsync(new FindVideosBySearchAndUserId(criterion.UserId, criterion.Search));
+                List<Video> videos = await _asyncQueryBuilder
+                    .For<List<Video>>()
+                    .WithAsync(new FindContentBySearchAndUserId(criterion.UserId, criterion.Search));
 
-                content = (List<Content>)content.Concat(await videos.ToListAsync());
+                content = content.Concat(videos).ToList();
 
-                IAsyncQueryable<Gallery> galleries = await _asyncQueryBuilder
-                    .For<IAsyncQueryable<Gallery>>()
-                    .WithAsync(new FindGalleriesBySearchAndUserId(criterion.UserId, criterion.Search));
+                List<Gallery> galleries = await _asyncQueryBuilder
+                    .For<List<Gallery>>()
+                    .WithAsync(new FindContentBySearchAndUserId(criterion.UserId, criterion.Search));
 
-                content = (List<Content>)content.Concat(await galleries.ToListAsync());
+                content = content.Concat(galleries).ToList();
             }
 
-                 
-                query = query.OrderBy(x => x.Id);
-
                 return content;
+
             }
         }
     }

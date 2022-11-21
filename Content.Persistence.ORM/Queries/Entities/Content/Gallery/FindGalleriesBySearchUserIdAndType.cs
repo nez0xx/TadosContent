@@ -13,12 +13,12 @@ namespace Content.Persistence.ORM.Queries.Entities.Content
     using global::Queries.Abstractions;
     using Linq.AsyncQueryable.Abstractions;
 
-    public class FindGalleriesBySearchUserIdAndTypeQuery :
-        LinqAsyncQueryBase<Gallery, FindContentBySearchUserIdAndType, List<Gallery>>
+    public class FindGalleriesBySearchAndUserIdQuery :
+        LinqAsyncQueryBase<Gallery, FindContentBySearchAndUserId, List<Gallery>>
     {
         private IAsyncQueryBuilder _asyncQueryBuilder;
 
-        public FindGalleriesBySearchUserIdAndTypeQuery(
+        public FindGalleriesBySearchAndUserIdQuery(
             ILinqProvider linqProvider,
             IAsyncQueryableFactory asyncQueryableFactory, IAsyncQueryBuilder asyncQueryBuilder) : base(linqProvider, asyncQueryableFactory)
         {
@@ -27,7 +27,7 @@ namespace Content.Persistence.ORM.Queries.Entities.Content
 
 
         public override Task<List<Gallery>> AskAsync(
-            FindContentBySearchUserIdAndType criterion,
+            FindContentBySearchAndUserId criterion,
             CancellationToken cancellationToken = default)
         {
             IQueryable<Gallery> query = Query;
