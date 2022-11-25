@@ -9,6 +9,7 @@
         public ContentProfile()
         {
             CreateMap<Content, ContentListItemDto>();
+            
 
 
             CreateMap<Content, ContentDto>()

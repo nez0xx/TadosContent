@@ -80,7 +80,7 @@
         [Route("edit")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> EditGallery(ContentEditHierarchicRequestBase request) => this.HierarchicRequestAsync(request);
+        public Task<IActionResult> EditContent(ContentEditHierarchicRequestBase request) => this.HierarchicRequestAsync(request);
 
         [HttpPost]
         [Route("rate")]

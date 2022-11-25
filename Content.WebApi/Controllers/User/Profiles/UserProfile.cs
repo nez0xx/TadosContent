@@ -10,7 +10,8 @@
         {
 
             CreateMap<User, UserDto>();
-            CreateMap<User, UserListItemDto>();
+            CreateMap<User, UserListItemDto>()
+                .ForMember(d => d.CityFullName, opts => opts.MapFrom(src => string.Concat(src.City.Country.Name, ", ", src.City.Name))); 
        
         }
     }

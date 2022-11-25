@@ -7,7 +7,7 @@
     {
         public long Id { get; set; }
 
-        public ContentCategory Category { get; set; }
+        public ContentCategory Type { get; set; }
 
         public UserListItemDto Creator { get; set; }
 

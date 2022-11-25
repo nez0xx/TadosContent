@@ -6,16 +6,16 @@
         /// <summary>
         /// Статья
         /// </summary>
-        Article = 1,
+        Article = 0,
         
         /// <summary>
         /// Видео
         /// </summary>
-        Video = 2,
+        Video = 1,
         
         /// <summary>
         /// Галерея
         /// </summary>
-        Gallery = 3,
+        Gallery = 2,
     }
 }
