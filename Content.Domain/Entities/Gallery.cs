@@ -18,7 +18,7 @@ namespace Content.Domain.Entities
         
         protected internal Gallery(string title, List<string> imagesUrls, string coverUrl, User creator) : base(ContentType.Gallery, title, creator)
         {   
-            _imagesUrls = imagesUrls;
+            AddImagesUrls(imagesUrls);
             CoverUrl = coverUrl;
         }
 
@@ -32,11 +32,15 @@ namespace Content.Domain.Entities
             CoverUrl = coverUrl;
         }
 
-        public virtual void SetImagesUrls(List<string> imagesUrls)
+        protected internal virtual void AddImagesUrls(List<string> imagesUrls)
         {
             if (imagesUrls == null)
                 throw new ArgumentException("Value cannot be null.", nameof(imagesUrls));
-            //_imagesUrls = imagesUrls;
+            foreach (string url in imagesUrls)
+            {
+                _imagesUrls.Add(url);
+            }
+            
         }
     }
 }

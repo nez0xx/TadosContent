@@ -34,7 +34,6 @@
 
             if (request.CoverUrl != null) gallery.SetCoverUrl(request.CoverUrl);
 
-            if (request.ImagesUrls != null) gallery.SetImagesUrls(request.ImagesUrls);
 
 
         }
