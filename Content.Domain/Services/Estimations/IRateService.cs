@@ -6,8 +6,8 @@
     using global::Domain.Abstractions;
 
 
-    public interface IEstimationService : IDomainService
+    public interface IRateService : IDomainService
     {
-        Task EstimateAsync(Content content, User user, int digit, CancellationToken cancellationToken = default);
+        void Rate(Content content, User user, int digit, CancellationToken cancellationToken = default);
     }
 }

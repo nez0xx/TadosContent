@@ -34,19 +34,31 @@ namespace Content.Domain.Entities
         
         public virtual String Title { get; protected set; }
 
+        public virtual decimal AverageRating { get; protected set; }
+
         public virtual IEnumerable<Estimation> Estimations => _estimations;
 
-        protected internal virtual Estimation Estimate(User user, int digit)
+        protected internal virtual Estimation Rate(User user, int digit)
         {
             if (user == null)
                 throw new ArgumentNullException(nameof(user));
 
-            if (digit <= 0 || digit > 5)
+            if (digit < 1 || digit > 5)
                 throw new ArgumentOutOfRangeException(nameof(digit));
 
             Estimation estimation = new Estimation(user, digit);
 
             _estimations.Add(estimation);
+
+            int sum = 0;
+            int quntity = _estimations.Count;
+
+            foreach(Estimation _estimation in _estimations)
+            {
+                sum += _estimation.Digit;
+            }
+
+            AverageRating = sum / quntity;
 
             return estimation;
         }

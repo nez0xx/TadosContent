@@ -86,7 +86,7 @@
         [Route("rate")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> Rate(ContentRateRequest request) => throw new NotImplementedException();
+        public Task<IActionResult> Rate(ContentRateRequest request) => this.RequestAsync(request);
         
         [HttpPost]
         [Route("get")]
