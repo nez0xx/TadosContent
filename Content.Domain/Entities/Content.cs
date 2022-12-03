@@ -34,7 +34,7 @@ namespace Content.Domain.Entities
         
         public virtual String Title { get; protected set; }
 
-        public virtual decimal AverageRating { get; protected set; }
+        public virtual float AverageRating { get; protected set; }
 
         public virtual IEnumerable<Estimation> Estimations => _estimations;
 
@@ -51,14 +51,14 @@ namespace Content.Domain.Entities
             _estimations.Add(estimation);
 
             int sum = 0;
-            int quntity = _estimations.Count;
+            int quantity = _estimations.Count;
 
             foreach(Estimation _estimation in _estimations)
             {
                 sum += _estimation.Digit;
             }
 
-            AverageRating = sum / quntity;
+            this.AverageRating = sum / (float)quantity;
 
             return estimation;
         }

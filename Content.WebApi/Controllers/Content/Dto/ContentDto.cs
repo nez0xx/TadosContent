@@ -12,6 +12,6 @@
 
         public string Title { get; set; }
         
-        public decimal AverageRating { get; set; }
+        public float AverageRating { get; set; }
     }
 }
