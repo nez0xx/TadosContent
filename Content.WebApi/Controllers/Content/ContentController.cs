@@ -18,25 +18,6 @@
     [Route("api/content")]
     public class ContentController : ContentApiControllerBase
     {
-        /*[HttpPost]
-        [Route("createArticle")]
-        [ProducesResponseType(typeof(ContentCreateResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> CreateArticle(CreateArticleHierarchicRequest request) => throw new NotImplementedException();
-
-        [HttpPost]
-        [Route("createVideo")]
-        [ProducesResponseType(typeof(ContentCreateResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> CreateVideo(ContentCreateVideoRequest request) => throw new NotImplementedException();
-        
-        [HttpPost]
-        [Route("createGallery")]
-        [ProducesResponseType(typeof(ContentCreateResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public Task<IActionResult> CreateGallery(CreateGalleryHierarchicRequest request) => throw new NotImplementedException();
-        */
-
         public ContentController(
             IAsyncRequestBuilder asyncRequestBuilder,
             IAsyncHierarchicRequestBuilder asyncHierarchicRequestBuilder,
@@ -55,26 +36,7 @@
         public Task<IActionResult> CreateContent(ContentCreateHierarchicRequestBase request) => 
             this.HierarchicRequestAsync()
                 .For<ContentCreateHierarchicResponse>()
-                .With(request);
-        /*
-                [HttpPost]
-                [Route("editArticle")]
-                [ProducesResponseType(StatusCodes.Status200OK)]
-                [ProducesResponseType(StatusCodes.Status400BadRequest)]
-                public Task<IActionResult> EditArticle(ContentEditArticleRequest request) => throw new NotImplementedException();
-
-                [HttpPost]
-                [Route("editVideo")]
-                [ProducesResponseType(StatusCodes.Status200OK)]
-                [ProducesResponseType(StatusCodes.Status400BadRequest)]
-                public Task<IActionResult> EditVideo(ContentEditVideoRequest request) => throw new NotImplementedException();
-
-                [HttpPost]
-                [Route("editGallery")]
-                [ProducesResponseType(StatusCodes.Status200OK)]
-                [ProducesResponseType(StatusCodes.Status400BadRequest)]
-                public Task<IActionResult> EditGallery(ContentEditGalleryRequest request) => throw new NotImplementedException();
-        */
+                .With(request);     
 
         [HttpPost]
         [Route("edit")]
